@@ -1,0 +1,127 @@
+@media (max-width: 796px) {
+    article {
+        margin-top: 70px;
+    }
+
+    header {
+        height: 70px;
+    }
+
+    nav{
+        width: 100%;
+        font-size: 16px;
+    }
+
+    html {
+        scroll-padding-top: 70px;
+    }
+}
+
+@media (min-width: 797px) {
+    article {
+        width: 80%;
+        margin-top: 80px;
+    }
+
+    nav {
+        width: 80%;
+        font-size: 26px;
+    }
+
+    header {
+        height: 80px;
+    }
+
+    html {
+        scroll-padding-top: 80px;
+    }
+}
+
+
+.background{
+    background:  url("../img/background_mauer.jpg");
+}
+
+header{
+    position: fixed;
+    top: 0;
+    padding-bottom: 50px;
+    white-space: nowrap;
+    z-index: 1000;
+    background-color: rgb(31, 30, 30);
+}
+
+.image{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.container {
+    position: relative;
+    padding: 12px;
+}
+
+/*Overlay gemäss Tutorial von W3 Schools*/
+.overlay { 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 1s ease;
+    background-color: rgb(42, 188, 214);
+}
+.container:hover .overlay {
+    opacity: 1;
+}
+.overlaytext {
+    color: whitesmoke;
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#form {
+    text-align: left;
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 0px
+}
+
+.table{
+    text-align: left;
+}
+
+#number{
+    margin-left: 6px;
+}
+
+.preis{
+    text-align: right;
+}
+
+.error{
+    color: red;
+    visibility: hidden;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(31, 30, 30);
+    color: white;
+    text-align: center;
+}

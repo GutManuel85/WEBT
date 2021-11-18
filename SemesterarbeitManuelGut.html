@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>MyMovie</title>
+    <link rel="stylesheet" type="text/css" href="css/w3.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8">
+</head>
+
+<body class="background">
+
+    <header class="w3-padding-large w3-col s12">
+        <nav class="fixed-navigation w3-auto">
+            <a href="#information"
+                class="w3-button w3-border w3-border-white w3-text-white  w3-hover-dark-grey w3-hover-text-aqua w3-margin-right">INFORMATION</a>
+            <a href="#form"
+                class="w3-button w3-border w3-border-white w3-text-white  w3-hover-dark-grey w3-hover-text-aqua w3-margin-right">FORM</a>
+            <a href="#canvas"
+                class="w3-button w3-border w3-border-white w3-text-white  w3-hover-dark-grey w3-hover-text-aqua w3-margin-right">CANVAS</a>
+        </nav>
+    </header>
+
+    <article class="w3-padding-large w3-auto w3-white">
+        <section class="w3-padding-small">
+            <h1 id="information">Information</h1>
+            <p>Die dreiteilige Fantasy-Film-Reihe "The Hobbit" sowie der Fantasyklassiker
+                "Lord of the Rings" basieren auf den Romanen von J.R.R.Tolkien. In unserer Videothek
+                MyMovie kannst du alle sechs Filme kaufen. Wenn du mit der Maus
+                über die Covers der Filme fährst, werden dir die Preise angezeigt. Über unser
+                Bestellformular kannst du deine Bestellung abgeben. Falls du innerhalb von 24 Stunden mehr als einmal bestellst,
+                erhältst du einen Gutschein-Code. Vielen Dank für deinen Einkauf!
+            </p>
+            <div class="container w3-col l4 s6">
+                <img src="img/movies/eineUnerwarteteReise.png" alt="The Hobbit - Eine unerwartete Reise" class="image">
+                <div class="overlay">
+                    <div class="overlaytext">CHF 9.90</div>
+                </div>
+            </div>
+            </p>
+            <div class="container w3-col l4 s6">
+                <img src="img/movies/smaugsEinoede.png" alt="The Hobbit - Smaus Einöde" class="image">
+                <div class="overlay">
+                    <div class="overlaytext">CHF 10.90</div>
+                </div>
+            </div>
+            </p>
+            <div class="container w3-col l4 s6">
+                <img src="img/movies/schlachtDerFuenfHeere.png" alt="The Hobbit - Schlacht der fünf Heere"
+                    class="image">
+                <div class="overlay">
+                    <div class="overlaytext">CHF 11.90</div>
+                </div>
+            </div>
+            </p>
+            <div class="container w3-col l4 s6">
+                <img src="img/movies/dieGefaehrten.png" alt="Herr der Ringe - die Gefährten" class="image">
+                <div class="overlay">
+                    <div class="overlaytext">CHF 6.90</div>
+                </div>
+            </div>
+            </p>
+            <div class="container w3-col l4 s6">
+                <img src="img/movies/dieZweiTuerme.png" alt="Herr der Ringe - zwei Türme" class="image">
+                <div class="overlay">
+                    <div class="overlaytext">CHF 7.90</div>
+                </div>
+            </div>
+            </p>
+            <div class="container w3-col l4 s6">
+                <img src="img/movies/dieRueckkehrDesKoenigs.png" alt="Herr der Ringe - die Rückkehr des Königs"
+                    class="image">
+                <div class="overlay">
+                    <div class="overlaytext">CHF 8.90</div>
+                </div>
+            </div>
+            <p>Nachfolgend das Bestellformular, über welches du die Filme kaufen kannst.</p>
+        </section>
+        <hr>
+        <section class="formsection">
+            <h1 id="form">Form</h1>
+            <form method="POST" action="order.php">
+                <h2>Bestellung</h2>
+                <table>
+                    <tr>
+                        <td><label for="name">Name</label></td>
+                        <td><input id="name" name="name" type="text" size=40 maxlength="40"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="firstname">Vorname</label></td>
+                        <td><input id="firstname" name="firstname" type="text" size=40 maxlength="40"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">E-Mail</label></td>
+                        <td><input id="email" name="email" type="email" size=40 maxlength="40"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="street">Strasse und Nummer</label></td>
+                        <td>
+                            <input id="street" name="street" type="text" size=30 maxlength="40">
+                            <input id="number" name="number" type="text" size=5 maxlength="10">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="plz">PLZ und Ort</label></td>
+                        <td>
+                            <input id="plz" name="plz" type="number" size=6 maxlength="5" min="1000" max="9999">
+                            <input id="village" name="village" type="text" size=30 maxlength="40">
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <table>
+                    <tr>
+                        <th class=table>Anzahl</th>
+                        <th class=table>Film</th>
+                        <th class="preis">Stückpreis</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="anzahl1" id="anzahl1" type="number" min="0" size=3 value="0"
+                                onchange="checkAnzahl();">
+                        </td>
+                        <td>The Hobbit - Eine unerwartete Reises</td>
+                        <td id="preis1" class="preis">9.90</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="anzahl2" id="anzahl2" type="number" min="0" size=3 value="0"
+                                onchange="checkAnzahl();">
+                        </td>
+                        <td>The Hobbit - smaugs Einöde</td>
+                        <td id="preis2" class="preis">10.90</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="anzahl3" id="anzahl3" type="number" min="0" size=3 value="0"
+                                onchange="checkAnzahl();">
+                        </td>
+                        <td>The Hobbit - Schlacht der fünf Heere</td>
+                        <td id="preis3" class="preis">11.90</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="anzahl4" id="anzahl4" type="number" min="0" size=3 value="0"
+                                onchange="checkAnzahl();">
+                        </td>
+                        <td>Herr der Ringe - Die Gefährten</td>
+                        <td id="preis4" class="preis">6.90</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="anzahl5" id="anzahl5" type="number" min="0" size=3 value="0"
+                                onchange="checkAnzahl();">
+                        </td>
+                        <td>Herr der Ringe - Die zwei Türme</td>
+                        <td id="preis5" class="preis">7.90</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input name="anzahl6" id="anzahl6" type="number" min="0" size=3 value="0"
+                                onchange="checkAnzahl();">
+                        </td>
+                        <td>Herr der Ringe - Die Rückkehr des Königs</td>
+                        <td id="preis6" class="preis">8.90</td>
+                    </tr>
+                </table>
+                <br>
+                <label for="agb">AGBs gelesen und akzeptiert</label>
+                <input id="agb" type="checkbox" required>
+                <br>
+                <br>
+                <button type="submit" id="submit" onmouseover="checkAnzahl()" onmouseout="setBack()">Bestellen</button>
+                <p class="error" id="error">Du hast kein Produkt gewählt. Bitte überprüfe deine Eingabe!</p>
+                <br>
+            </form>
+        </section>
+        <hr>
+        <section class="w3-white l12">
+            <h1 id="canvas">Canvas</h1>
+            <canvas id="canvasImage" height="500" width="500">
+            </canvas>
+        </section>
+        <hr>
+
+    </article>
+
+    <script src="js/canvasImage.js"></script>
+    <script src="js/formValidation.js"></script>
+
+</body>
+
+<div class="footer">
+    <p>Created by Manuel Gut / HSLU / Bachelor Inormatik / WEBT</p>
+
+</div>
+
+</html>
